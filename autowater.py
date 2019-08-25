@@ -7,7 +7,7 @@ parser.add_argument('-g', '--garden', action='store_false', help='enable garden 
 args = parser.parse_args()
 
 # The amount of time for each zone
-times = [20, 15, 15, 20, 12]
+times = [1, 1, 1, 1, 1]
 
 # Turn on the relay that powers the pump
 plate.relayON(0,7)
@@ -34,7 +34,7 @@ plate.relayOFF(0,4)
 
 # If specified by the user, don't turn
 # on zone 5 (garden) for 12 minutes
-if args.garden == true:
+if args.garden == True:
     plate.relayON(0,5)
     time.sleep(times[4]*60)
     plate.relayOFF(0,5)
