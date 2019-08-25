@@ -3,7 +3,7 @@ import time
 import piplates.RELAYplate as plate
 
 parser = argparse.ArgumentParser(description='Automatically turn on sprinkler zones for specified intervals.')
-parser.add_argument('-g', '--garden', action='store_false', help='enable garden zone')
+parser.add_argument('-g', '--garden', action='store_false', help='disable garden zone')
 args = parser.parse_args()
 
 # The amount of time for each zone
