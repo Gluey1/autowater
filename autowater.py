@@ -12,28 +12,14 @@ times = [1, 1, 1, 1, 1]
 # Turn on the relay that powers the pump
 plate.relayON(0,7)
 
-# Turn on zone 1 for 20 minutes
-plate.relayON(0,1)
-time.sleep(times[0]*60)
-plate.relayOFF(0,1)
-
-# Turn on zone 2 for 15 minutes
-plate.relayON(0,2)
-time.sleep(times[1]*60)
-plate.relayOFF(0,2)
-
-# Turn on zone 3 for 15 minutes
-plate.relayON(0,3)
-time.sleep(times[2]*60)
-plate.relayOFF(0,3)
-
-# Turn on zone 4 for 20 minutes
-plate.relayON(0,4)
-time.sleep(times[3]*60)
-plate.relayOFF(0,4)
+# Turn on all zones 1 by 1
+for i in range(1,5):
+    plate.relayON(0,i)
+    time.sleep(times[i-1]*60)
+    plate.relayOFF(0,i)
 
 # If specified by the user, don't turn
-# on zone 5 (garden) for 12 minutes
+# on zone 5 (garden)
 if args.garden == True:
     plate.relayON(0,5)
     time.sleep(times[4]*60)
