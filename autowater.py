@@ -7,7 +7,7 @@ parser.add_argument('-g', '--garden', action='store_false', help='disable garden
 args = parser.parse_args()
 
 # The amount of time for each zone
-times = [1, 1, 1, 1, 1]
+times = [15, 12, 12, 10, 5]
 
 # Turn on the relay that powers the pump
 plate.relayON(0,7)
